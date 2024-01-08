@@ -4,8 +4,9 @@ import { UserController } from './user.controller';
 import { AuthenticationService } from '@app/auth/logger.middleware';
 
 @Module({
-  controllers: [UserController],
+  controllers:[UserController],
   providers: [UserService],
+  exports: [UserService]
 })
 export class UserModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
